@@ -1,0 +1,81 @@
+########################################
+# OS / Editors (כללי)
+########################################
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*.tmp
+*.log
+*.bak
+*.orig
+*.rej
+.idea/
+.vscode/         # אם יש הגדרות שתרצה/י לשמור – מחק/י את השורה
+
+########################################
+# .NET / Visual Studio
+########################################
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+*.ipch
+_BuildTmp/
+[Tt]est[Rr]esult*/
+[Aa]rtifacts/
+**/[Bb]in/
+**/[Oo]bj/
+.vs/
+
+# חבילות משחזור – לא צריך בקוד
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# כיסויי קוד
+coverage/
+*.coverage
+*.coveragexml
+
+# קבצי סודות/לוקאל (אל תכניסו רגישים ל-Git)
+**/secrets.json
+**/appsettings.*.local.json
+**/appsettings.local.json
+
+########################################
+# Angular / Node (בתיקיית contacts-ui)
+########################################
+contacts-ui/node_modules/
+contacts-ui/dist/
+contacts-ui/.angular/
+contacts-ui/.cache/
+contacts-ui/.npm/
+contacts-ui/.yarn/
+contacts-ui/.pnpm-store/
+contacts-ui/package-lock.json    # השאר/י אם את/ה רוצה נעילה עקבית
+contacts-ui/pnpm-lock.yaml
+contacts-ui/yarn.lock
+
+# קבצי סביבה (אל תכניסו רגישים)
+contacts-ui/.env
+contacts-ui/.env.*
+!contacts-ui/.env.example        # אפשר להשאיר דוגמה ללא סודות
+
+# לוגים/דוחות
+contacts-ui/npm-debug.log*
+contacts-ui/yarn-debug.log*
+contacts-ui/yarn-error.log*
+contacts-ui/coverage/
+contacts-ui/.eslintcache
+contacts-ui/.stylelintcache
+
+########################################
+# כלי בנייה/IDE נוספים (אופציונלי)
+########################################
+*.tgz
