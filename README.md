@@ -1,34 +1,24 @@
-# Home Test – Contact Requests API & Angular UI
+# 📞 Contact Requests – Full Stack Application
 
 ## 📌 Overview
-This project contains two parts:
+This repository contains a **full-stack Contact Requests system** built as part of a technical assignment.  
+It consists of two main parts:
 
-1. **Contacts.Api** (ASP.NET Core 8 Web API)  
+1. **Backend – Contacts.Api (.NET 8 Web API)**  
    - Provides CRUD operations for contact requests  
-   - Includes API key protection (`X-Api-Key`) for write operations  
-   - Implements a simulated stored procedure endpoint for a monthly report  
-   - In-memory EF database (so the project runs without a real DB)  
-   - Basic error handling, validation and Swagger UI enabled
+   - Protected with API key (`X-Api-Key`) for all write operations  
+   - Includes a simulated stored procedure endpoint for monthly reports  
+   - Uses EF Core InMemory database (no external DB required)  
+   - Swagger/OpenAPI documentation available  
+   - Unit tests with xUnit
 
-2. **contacts-ui** (Angular 18 + Angular Material)  
-   - Responsive web application with two main pages:
-     - **Contact Form** – allows users to submit a request (name, phone, email, department(s), description)  
-     - **Monthly Report** – displays the report returned by the API (grouped per month)
-   - Mobile-friendly and RTL (Right-to-Left) support  
-   - Uses Angular Material components for modern, clean UI
-
----
-
-## ⚙️ Technologies Used
-- **Backend:** .NET 8, Entity Framework Core (InMemory), xUnit for tests  
-- **Frontend:** Angular 18 (standalone components), Angular Material  
-- **Other:** Swagger/OpenAPI, CORS enabled for local dev
+2. **Frontend – contacts-ui (Angular 18 + Angular Material)**  
+   - Responsive web application with **RTL support** (Hebrew/Arabic)  
+   - Contact Form page – submit name, phone, email, departments, description  
+   - Monthly Report page – display data from the backend report endpoint  
+   - Built with Angular standalone components and Angular Material  
+   - Mobile-friendly and optimized for different screen sizes  
 
 ---
 
-## 🚀 How to Run Locally
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/Yehudit1404/HomeTest23-08-2025.git
-cd HomeTest23-08-2025
+## 📂 Project Structure
