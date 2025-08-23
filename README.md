@@ -1,4 +1,4 @@
-# 📞 Contact Requests – Full Stack Application
+#  Contact Requests – Full Stack Application
 
 ## 📌 Overview
 This repository contains a **full-stack Contact Requests system** built as part of a technical assignment.  
