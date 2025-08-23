@@ -1,0 +1,10 @@
+.card-head {
+  padding: 12px 16px 0 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.title { display:flex; align-items:center; gap:10px; }
+.title h2 { display:flex; align-items:center; gap:8px; margin:0; }
+.subtitle { margin: 0; opacity: .7; font-size: .95rem; }
+.filters { display:flex; align-items:center; gap:12px; }
+table { width: 100%; margin-top: 12px; }
+.empty { opacity: .7; padding: 12px; }

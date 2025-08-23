@@ -1,0 +1,62 @@
+/* בסיס טיפוגרפיה ופלטה */
+@use '@angular/material' as mat;
+
+/* גרעין Material */
+@include mat.core();
+
+/* תאמי אם התקנת מוד dark. כאן נבחר בהיר מודרני: */
+$primary: mat.m2-define-palette(mat.$m2-indigo-palette, 600);
+$accent:  mat.m2-define-palette(mat.$m2-pink-palette, A200);
+$warn:    mat.m2-define-palette(mat.$m2-red-palette);
+
+$theme: mat.m2-define-light-theme((
+  color: (primary: $primary, accent: $accent, warn: $warn),
+  typography: mat.m2-define-typography-config()
+));
+
+@include mat.all-component-themes($theme);
+
+/* RTL – Material תומך אוטומטית כש-dir="rtl" ב-HTML */
+
+/* בסיס גלובלי */
+:root {
+  --page-bg: #f7f8fa;
+  --card-radius: 16px;
+}
+
+html, body {
+  height: 100%;
+  background: var(--page-bg);
+  font-family: "Heebo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111;
+}
+
+mat-toolbar.mat-toolbar {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* קונטיינר מסכים */
+.page {
+  padding: 16px;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+mat-card {
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* מחלקות עזר לגרידים */
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}

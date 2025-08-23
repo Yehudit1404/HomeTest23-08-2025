@@ -1,0 +1,45 @@
+<div class="page">
+  <mat-card>
+    <header class="card-head">
+      <div class="title">
+        <h2><mat-icon>insights</mat-icon> דו"ח חודשי</h2>
+        <p class="subtitle">סיכום פניות לפי חודש ומחלקה</p>
+      </div>
+      <div class="filters">
+        <mat-form-field appearance="outline">
+          <mat-label>שנה</mat-label>
+          <input matInput type="number" [(ngModel)]="year" min="2000" max="2100">
+        </mat-form-field>
+        <button mat-stroked-button color="primary" (click)="load()" [disabled]="loading">
+          <mat-icon>refresh</mat-icon> רענון
+        </button>
+      </div>
+    </header>
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <table mat-table [dataSource]="rows" class="mat-elevation-z2">
+      <ng-container matColumnDef="month">
+        <th mat-header-cell *matHeaderCellDef> חודש </th>
+        <td mat-cell *matCellDef="let r">{{ r.month }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef> מחלקה </th>
+        <td mat-cell *matCellDef="let r">{{ r.department }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="count">
+        <th mat-header-cell *matHeaderCellDef> כמות </th>
+        <td mat-cell *matCellDef="let r">{{ r.count }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let r; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="empty" *ngIf="!loading && rows.length === 0">
+      אין נתונים לשנה שנבחרה.
+    </div>
+  </mat-card>
+</div>

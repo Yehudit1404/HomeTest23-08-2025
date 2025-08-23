@@ -1,0 +1,56 @@
+<div class="page">
+  <mat-card>
+    <header class="card-head">
+      <div class="title">
+        <h2><mat-icon>chat</mat-icon> טופס פנייה</h2>
+        <p class="subtitle">השאירי פרטים ונחזור אלייך</p>
+      </div>
+      <button mat-stroked-button color="primary" (click)="form.reset({ departments: [] })">
+        איפוס טופס
+      </button>
+    </header>
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="grid grid-2">
+      <mat-form-field appearance="outline">
+        <mat-label>שם מלא</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="form.get('name')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>טלפון</mat-label>
+        <input matInput formControlName="phone" required>
+        <mat-error *ngIf="form.get('phone')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>אימייל</mat-label>
+        <input matInput formControlName="email" required>
+        <mat-error *ngIf="form.get('email')?.hasError('email')">אימייל לא תקין</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>מחלקה</mat-label>
+        <mat-select formControlName="departments" multiple required>
+          <mat-option *ngFor="let d of availableDepartments" [value]="d">{{ d }}</mat-option>
+        </mat-select>
+        <mat-hint>ניתן לבחור יותר מאחת</mat-hint>
+        <mat-error *ngIf="form.get('departments')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full" appearance="outline">
+        <mat-label>תיאור הפנייה</mat-label>
+        <textarea matInput rows="4" formControlName="description"></textarea>
+        <mat-error *ngIf="form.get('description')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <div class="actions full">
+        <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+          שליחה
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,10 @@
+.card-head {
+  padding: 12px 16px 0 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.title { display:flex; align-items:center; gap:10px; }
+.title h2 { display:flex; align-items:center; gap:8px; margin:0; }
+.subtitle { margin: 0; opacity: .7; font-size: .95rem; }
+
+.full { grid-column: 1 / -1; }
+.actions { display:flex; justify-content: flex-start; gap: 10px; }
