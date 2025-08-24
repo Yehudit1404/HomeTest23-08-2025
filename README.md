@@ -20,5 +20,3 @@ It consists of two main parts:
    - Mobile-friendly and optimized for different screen sizes  
 
 ---
-
-## 📂 Project Structure
